@@ -1,1 +1,1358 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sweet Acessórios — Dossiê da Campanha</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rose: #C9707A;
+    --rose-light: #E8B4B8;
+    --rose-pale: #F5E6E8;
+    --gold: #C4A882;
+    --gold-light: #EDE0CE;
+    --cream: #FAF6F1;
+    --dark: #2A1F1F;
+    --mid: #6B5050;
+    --muted: #9E8080;
+    --white: #FFFFFF;
+    --border: rgba(196,168,130,0.25);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--dark);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(201,112,122,0.18) 0%, transparent 65%),
+                radial-gradient(ellipse at 20% 80%, rgba(196,168,130,0.12) 0%, transparent 50%);
+  }
+  .header-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3.5rem 2.5rem 2.5rem;
+  }
+  .header-badge {
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(196,168,130,0.4);
+    padding: 0.35rem 0.9rem;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+  }
+  .header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  .header h1 em {
+    font-style: italic;
+    color: var(--rose-light);
+  }
+  .header-sub {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 0.75rem;
+    font-weight: 300;
+  }
+  .header-meta {
+    text-align: right;
+    padding-bottom: 0.25rem;
+  }
+  .header-meta .period {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .header-meta .period-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 0.3rem;
+  }
+
+  /* ── NAV ── */
+  .nav {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(42,31,31,0.06);
+  }
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav-inner::-webkit-scrollbar { display: none; }
+  .nav-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 1rem 1.25rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+  .nav-btn:hover { color: var(--rose); }
+  .nav-btn.active { color: var(--rose); border-bottom-color: var(--rose); }
+
+  /* ── SECTIONS ── */
+  .section { display: none; }
+  .section.active { display: block; }
+
+  .content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 2.5rem;
+  }
+
+  /* ── SECTION TITLE ── */
+  .sec-title {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .sec-title h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--dark);
+  }
+  .sec-title span {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rose);
+  }
+
+  /* ── CARDS GRID ── */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.5rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .card:hover {
+    box-shadow: 0 8px 30px rgba(42,31,31,0.08);
+    transform: translateY(-2px);
+  }
+  .card-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .card-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.45rem;
+    font-weight: 400;
+    color: var(--dark);
+    line-height: 1.3;
+  }
+  .card-sub {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 0.4rem;
+  }
+
+  /* ── OFFER BLOCKS ── */
+  .offer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .offer-card {
+    background: linear-gradient(135deg, var(--rose-pale), var(--gold-light));
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .offer-card::before {
+    content: '';
+    position: absolute;
+    top: -20px; right: -20px;
+    width: 70px; height: 70px;
+    background: radial-gradient(circle, rgba(201,112,122,0.15), transparent);
+    border-radius: 50%;
+  }
+  .offer-qty {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--rose);
+    line-height: 1;
+  }
+  .offer-label { font-size: 0.72rem; color: var(--mid); margin: 0.25rem 0 0.75rem; }
+  .offer-disc {
+    background: var(--rose);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.4rem 0.9rem;
+    border-radius: 4px;
+    display: inline-block;
+  }
+  .offer-note { font-size: 0.7rem; color: var(--muted); margin-top: 0.5rem; }
+
+  /* ── CHANNELS ── */
+  .channel-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+  .channel-tag {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 0.45rem 1.1rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--mid);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .channel-tag .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--rose);
+    flex-shrink: 0;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline { position: relative; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 100px;
+    top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--border) 5%, var(--border) 95%, transparent);
+  }
+  .tl-item {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+  }
+  .tl-date {
+    text-align: right;
+    padding-top: 0.15rem;
+  }
+  .tl-date .day {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--rose);
+    line-height: 1;
+  }
+  .tl-date .month {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .tl-dot {
+    position: absolute;
+    left: 96px;
+    top: 6px;
+    width: 9px; height: 9px;
+    background: var(--rose);
+    border-radius: 50%;
+    border: 2px solid var(--cream);
+  }
+  .tl-body {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .tl-item:last-child .tl-body { border-bottom: none; }
+  .tl-phase {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+  }
+  .tl-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--dark);
+    margin-bottom: 0.75rem;
+  }
+  .tl-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+  .tl-action {
+    background: var(--rose-pale);
+    border: 1px solid rgba(201,112,122,0.2);
+    border-radius: 4px;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.73rem;
+    color: var(--mid);
+    font-weight: 500;
+  }
+  .tl-note {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 0.6rem;
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  /* ── COPIES ── */
+  .copy-block {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--rose);
+    border-radius: 0 6px 6px 0;
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .copy-block .copy-type {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .copy-block .copy-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 0.75rem;
+  }
+  .copy-block .copy-text {
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: var(--mid);
+    white-space: pre-line;
+  }
+
+  /* ── EMAIL CARDS ── */
+  .email-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+  .email-header {
+    background: var(--dark);
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .email-header .phase-tag {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(196,168,130,0.15);
+    border: 1px solid rgba(196,168,130,0.3);
+    padding: 0.25rem 0.7rem;
+    border-radius: 3px;
+  }
+  .email-header .subject {
+    font-size: 0.88rem;
+    color: var(--white);
+    font-weight: 400;
+  }
+  .email-body { padding: 1.5rem; }
+  .email-pre {
+    font-size: 0.72rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .email-content {
+    font-size: 0.82rem;
+    line-height: 1.75;
+    color: var(--mid);
+    white-space: pre-line;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: var(--rose);
+    color: white;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.65rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 1rem;
+    letter-spacing: 0.04em;
+  }
+  .tip-box {
+    background: var(--gold-light);
+    border: 1px solid rgba(196,168,130,0.3);
+    border-radius: 6px;
+    padding: 0.85rem 1.1rem;
+    font-size: 0.76rem;
+    color: var(--mid);
+    margin-top: 1rem;
+  }
+  .tip-box strong { color: var(--dark); }
+
+  /* ── MSG CARDS ── */
+  .msg-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+  }
+  .msg-num {
+    position: absolute;
+    top: 1.25rem; right: 1.25rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--rose-light);
+    line-height: 1;
+  }
+  .msg-phase {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .msg-text {
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: var(--mid);
+    white-space: pre-line;
+    padding-right: 2rem;
+  }
+
+  /* ── CREATIVE IDEAS ── */
+  .creative-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  .creative-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: box-shadow 0.2s;
+  }
+  .creative-card:hover { box-shadow: 0 8px 30px rgba(42,31,31,0.07); }
+  .creative-card .c-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 0.5rem;
+  }
+  .creative-card .c-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 0.75rem;
+  }
+  .creative-card .c-desc {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: var(--mid);
+    margin-bottom: 0.75rem;
+  }
+  .hook-list { list-style: none; }
+  .hook-list li {
+    font-size: 0.8rem;
+    color: var(--mid);
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 0.6rem;
+  }
+  .hook-list li:last-child { border-bottom: none; }
+  .hook-list li::before { content: '›'; color: var(--rose); font-weight: bold; }
+
+  /* ── METAS BAR ── */
+  .meta-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  .meta-box {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.75rem;
+    text-align: center;
+  }
+  .meta-box .meta-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: var(--rose);
+    line-height: 1;
+  }
+  .meta-box .meta-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 0.4rem;
+  }
+  .meta-box .meta-detail {
+    font-size: 0.78rem;
+    color: var(--mid);
+    margin-top: 0.3rem;
+  }
+
+  /* ── TRIGGERS ── */
+  .trigger-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+  .trigger-tag {
+    background: var(--rose-pale);
+    border: 1px solid rgba(201,112,122,0.25);
+    border-radius: 6px;
+    padding: 0.6rem 1.1rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--rose);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
+    .header-inner { grid-template-columns: 1fr; }
+    .header-meta { text-align: left; }
+    .timeline::before { left: 70px; }
+    .tl-item { grid-template-columns: 70px 1fr; gap: 1.25rem; }
+    .tl-dot { left: 66px; }
+    .meta-bar { grid-template-columns: 1fr; }
+    .content { padding: 2rem 1.25rem; }
+  }
+
+  .fade-in {
+    animation: fadeIn 0.35s ease forwards;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <div>
+      <div class="header-badge">Sweet Acessórios · Dossiê de Campanha</div>
+      <h1>O Mês do<br><em>Consumidor Continua</em></h1>
+      <p class="header-sub">Ação de Desconto Progressivo · Categoria Brincos</p>
+    </div>
+    <div class="header-meta">
+      <div class="period">26/03<br>— 06/04</div>
+      <div class="period-label">Período de ativação</div>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <button class="nav-btn active" onclick="show('visao')">Visão Geral</button>
+    <button class="nav-btn" onclick="show('cronograma')">Cronograma</button>
+    <button class="nav-btn" onclick="show('criativos')">Criativos</button>
+    <button class="nav-btn" onclick="show('copys')">Copies & Roteiros</button>
+    <button class="nav-btn" onclick="show('emails')">E-mails</button>
+    <button class="nav-btn" onclick="show('grupos')">Grupo WhatsApp</button>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     SEÇÃO 1 — VISÃO GERAL
+══════════════════════════════════════════ -->
+<section id="visao" class="section active">
+<div class="content fade-in">
+
+  <div class="sec-title">
+    <h2>Visão Geral</h2>
+    <span>Briefing da ação</span>
+  </div>
+
+  <div class="meta-bar">
+    <div class="meta-box">
+      <div class="meta-num">R$6k</div>
+      <div class="meta-label">Meta de vendas</div>
+      <div class="meta-detail">Faturamento no período</div>
+    </div>
+    <div class="meta-box">
+      <div class="meta-num">40</div>
+      <div class="meta-label">Meta de pedidos</div>
+      <div class="meta-detail">Conversões esperadas</div>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-label">Tipo de ação</div>
+      <div class="card-value">Desconto Progressivo</div>
+      <div class="card-sub">Oportunidade de oferta</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Produto foco</div>
+      <div class="card-value">Categoria Brincos</div>
+      <div class="card-sub">A partir de R$39,90</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Orçamento</div>
+      <div class="card-value">R$2.000</div>
+      <div class="card-sub">Tráfego pago + produção</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Público-alvo</div>
+      <div class="card-value">Quente 60 dias</div>
+      <div class="card-sub">+ Interesse em acessórios</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Antecipação</div>
+      <div class="card-value">3 dias antes</div>
+      <div class="card-sub">Grupos + redes sociais</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Presente</div>
+      <div class="card-value">Sorteio Broche</div>
+      <div class="card-sub">ou lenço para compradores</div>
+    </div>
+  </div>
+
+  <div class="sec-title" style="margin-top:2.5rem">
+    <h2>Mecânica da Oferta</h2>
+    <span>Desconto por quantidade</span>
+  </div>
+
+  <div class="offer-grid">
+    <div class="offer-card">
+      <div class="offer-qty">2</div>
+      <div class="offer-label">brincos</div>
+      <div class="offer-disc">R$15 OFF</div>
+      <div class="offer-note">~15% de economia</div>
+    </div>
+    <div class="offer-card">
+      <div class="offer-qty">3</div>
+      <div class="offer-label">brincos</div>
+      <div class="offer-disc">R$20 OFF</div>
+      <div class="offer-note">~20% de economia</div>
+    </div>
+    <div class="offer-card">
+      <div class="offer-qty">4</div>
+      <div class="offer-label">brincos</div>
+      <div class="offer-disc">R$25 OFF</div>
+      <div class="offer-note">~25% de economia</div>
+    </div>
+    <div class="offer-card">
+      <div class="offer-qty">6</div>
+      <div class="offer-label">brincos</div>
+      <div class="offer-disc">R$50 OFF</div>
+      <div class="offer-note">~33% de economia</div>
+    </div>
+  </div>
+
+  <div class="sec-title" style="margin-top:2.5rem">
+    <h2>Canais de Divulgação</h2>
+    <span>Todos os pontos de contato</span>
+  </div>
+
+  <div class="channel-list">
+    <div class="channel-tag"><span class="dot"></span>Tráfego Pago (Meta Ads)</div>
+    <div class="channel-tag"><span class="dot"></span>Instagram Feed</div>
+    <div class="channel-tag"><span class="dot"></span>Instagram Stories</div>
+    <div class="channel-tag"><span class="dot"></span>Live Boom (Reels ao vivo)</div>
+    <div class="channel-tag"><span class="dot"></span>Grupo WhatsApp VIP</div>
+    <div class="channel-tag"><span class="dot"></span>E-mail Marketing (Flow Biz)</div>
+  </div>
+
+  <div class="sec-title" style="margin-top:2.5rem">
+    <h2>Gatilhos Utilizados</h2>
+    <span>Estratégia psicológica</span>
+  </div>
+  <div class="trigger-list">
+    <div class="trigger-tag">💰 Economia progressiva</div>
+    <div class="trigger-tag">📦 Multiplicação de valor</div>
+    <div class="trigger-tag">🎯 Variedade / mix de looks</div>
+    <div class="trigger-tag">⏳ Urgência (tempo limitado)</div>
+    <div class="trigger-tag">🎁 Presente / sorteio</div>
+    <div class="trigger-tag">🚚 Frete grátis acima de R$349,90</div>
+    <div class="trigger-tag">🔥 Escassez (estoque limitado)</div>
+  </div>
+
+</div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SEÇÃO 2 — CRONOGRAMA
+══════════════════════════════════════════ -->
+<section id="cronograma" class="section">
+<div class="content fade-in">
+
+  <div class="sec-title">
+    <h2>Cronograma</h2>
+    <span>Linha do tempo da ação</span>
+  </div>
+
+  <div class="timeline">
+
+    <div class="tl-item">
+      <div class="tl-date">
+        <div class="day">23</div>
+        <div class="month">Mar</div>
+      </div>
+      <div class="tl-dot"></div>
+      <div class="tl-body">
+        <div class="tl-phase">Antecipação — Dia 1</div>
+        <div class="tl-title">Início do aquecimento</div>
+        <div class="tl-actions">
+          <span class="tl-action">📱 Disparo no grupo WhatsApp</span>
+          <span class="tl-action">📧 E-mail de antecipação</span>
+          <span class="tl-action">📸 Post nas redes sociais</span>
+        </div>
+        <p class="tl-note">Mensagem de mistério: "Algo especial vem aí…" — spoiler de joias, sem revelar a oferta. Levar para o grupo VIP.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">
+        <div class="day">24</div>
+        <div class="month">Mar</div>
+      </div>
+      <div class="tl-dot"></div>
+      <div class="tl-body">
+        <div class="tl-phase">Antecipação — Dia 2</div>
+        <div class="tl-title">Segundo aquecimento</div>
+        <div class="tl-actions">
+          <span class="tl-action">📱 Disparo no grupo WhatsApp</span>
+          <span class="tl-action">📸 Stories de curiosidade</span>
+          <span class="tl-action">🎥 Live Boom antecipando</span>
+        </div>
+        <p class="tl-note">Live Boom levando para o grupo. Reforçar que quem estiver no grupo terá acesso primeiro.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">
+        <div class="day">25</div>
+        <div class="month">Mar</div>
+      </div>
+      <div class="tl-dot"></div>
+      <div class="tl-body">
+        <div class="tl-phase">Antecipação — Dia 3</div>
+        <div class="tl-title">Alerta VIP pré-lançamento</div>
+        <div class="tl-actions">
+          <span class="tl-action">📱 Disparo VIP no grupo</span>
+          <span class="tl-action">📧 E-mail "amanhã é o dia"</span>
+          <span class="tl-action">📸 Post stories contagem</span>
+        </div>
+        <p class="tl-note">Revelar que a oferta envolve brincos com desconto crescente. Criar antecipação máxima para o dia seguinte.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">
+        <div class="day">26</div>
+        <div class="month">Mar</div>
+      </div>
+      <div class="tl-dot" style="background:#C4A882"></div>
+      <div class="tl-body">
+        <div class="tl-phase" style="color:var(--rose)">🚀 LANÇAMENTO</div>
+        <div class="tl-title">Oferta vai ao ar!</div>
+        <div class="tl-actions">
+          <span class="tl-action">📱 Disparo no grupo</span>
+          <span class="tl-action">📧 E-mail de lançamento</span>
+          <span class="tl-action">📸 Post feed + stories</span>
+          <span class="tl-action">🎥 Live Boom com ManyChat</span>
+          <span class="tl-action">💸 Tráfego pago ON</span>
+        </div>
+        <p class="tl-note">Revelar a mecânica completa. Live com ManyChat ou link na bio direcionando para a categoria de brincos.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">
+        <div class="day">27–31</div>
+        <div class="month">Mar</div>
+      </div>
+      <div class="tl-dot"></div>
+      <div class="tl-body">
+        <div class="tl-phase">Ativação — Semana 1</div>
+        <div class="tl-title">Manutenção e reativação</div>
+        <div class="tl-actions">
+          <span class="tl-action">📱 Disparos no grupo</span>
+          <span class="tl-action">📧 E-mails de ativação</span>
+          <span class="tl-action">📸 Posts variados</span>
+          <span class="tl-action">🎥 Lives periódicas</span>
+        </div>
+        <p class="tl-note">Alternar criativos: vídeo de indecisão, comparativo 1 vs 3, monte seu mix. Comunicar modelos esgotando.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">
+        <div class="day">01–04</div>
+        <div class="month">Abr</div>
+      </div>
+      <div class="tl-dot"></div>
+      <div class="tl-body">
+        <div class="tl-phase">Ativação — Semana 2</div>
+        <div class="tl-title">Reforço da campanha</div>
+        <div class="tl-actions">
+          <span class="tl-action">📱 Disparos no grupo</span>
+          <span class="tl-action">📧 E-mails de meio</span>
+          <span class="tl-action">📸 Posts com prova social</span>
+          <span class="tl-action">🎥 Live Boom</span>
+        </div>
+        <p class="tl-note">Usar social proof (fotos de clientes), reforçar sorteio do broche/lenço. Alertar sobre contagem regressiva.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">
+        <div class="day">04–05</div>
+        <div class="month">Abr</div>
+      </div>
+      <div class="tl-dot" style="background:#C4A882"></div>
+      <div class="tl-body">
+        <div class="tl-phase" style="color:var(--rose)">⏳ Encerramento</div>
+        <div class="tl-title">Últimas 48h — urgência máxima</div>
+        <div class="tl-actions">
+          <span class="tl-action">📱 Disparo urgente no grupo</span>
+          <span class="tl-action">📧 E-mail "últimas horas"</span>
+          <span class="tl-action">📸 Stories contagem regressiva</span>
+          <span class="tl-action">🎥 Live de encerramento</span>
+        </div>
+        <p class="tl-note">Urgência real: "faltam 2 dias", modelos esgotando, última chance de participar do sorteio.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">
+        <div class="day">06</div>
+        <div class="month">Abr</div>
+      </div>
+      <div class="tl-dot" style="background:var(--gold)"></div>
+      <div class="tl-body">
+        <div class="tl-phase" style="color:var(--gold)">🏁 Encerramento Oficial</div>
+        <div class="tl-title">Fim da promoção + sorteio</div>
+        <div class="tl-actions">
+          <span class="tl-action">📱 Mensagem de encerramento</span>
+          <span class="tl-action">📧 E-mail de obrigada</span>
+          <span class="tl-action">🎁 Sorteio do broche/lenço</span>
+        </div>
+        <p class="tl-note">Anunciar ganhadora do sorteio. Agradecer participação. Preços voltam ao normal.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SEÇÃO 3 — CRIATIVOS
+══════════════════════════════════════════ -->
+<section id="criativos" class="section">
+<div class="content fade-in">
+
+  <div class="sec-title">
+    <h2>Criativos</h2>
+    <span>Conceitos e estruturas</span>
+  </div>
+
+  <div class="card" style="margin-bottom:2rem; border-left: 3px solid var(--rose);">
+    <div class="card-label">Big Idea da Campanha</div>
+    <div class="card-value" style="font-size:1.6rem">"Quanto mais você se presenteia,<br>menos você paga"</div>
+    <div class="card-sub" style="margin-top:0.75rem">Variações: "Monte seu mix e pague menos" · "1 é pouco. 3 é economia."</div>
+  </div>
+
+  <div class="creative-grid">
+
+    <div class="creative-card">
+      <div class="c-label">Vídeo 01 · Principal</div>
+      <div class="c-title">"Não consegui escolher… então levei 3"</div>
+      <div class="c-desc">Roteiro de indecisão: mostrar vários brincos → descoberta da oferta → decisão de levar mais.</div>
+      <ul class="hook-list">
+        <li>Cena 1: indecisão mostrando brincos variados</li>
+        <li>Cena 2: texto "quando você descobre isso…"</li>
+        <li>Cena 3: oferta progressiva aparece na tela</li>
+        <li>Resultado: "saí com 3 e paguei muito menos"</li>
+      </ul>
+    </div>
+
+    <div class="creative-card">
+      <div class="c-label">Carrossel / Estático · 02</div>
+      <div class="c-title">Comparativo "1 vs 3"</div>
+      <div class="c-desc">Slide a slide mostrando a diferença de valor entre comprar 1 e comprar 3 brincos.</div>
+      <ul class="hook-list">
+        <li>Slide 1: "Comprar 1 vs comprar 3"</li>
+        <li>Slide 2: preços lado a lado com desconto</li>
+        <li>Slide 3: "Você economiza + leva mais estilo"</li>
+      </ul>
+    </div>
+
+    <div class="creative-card">
+      <div class="c-label">Reels · 03</div>
+      <div class="c-title">"Monte seu Mix"</div>
+      <div class="c-desc">Mostrar combinações de looks com diferentes brincos, reforçando versatilidade + economia.</div>
+      <ul class="hook-list">
+        <li>Um look… várias versões</li>
+        <li>Brincos para cada ocasião</li>
+        <li>Oferta progressiva no final</li>
+      </ul>
+    </div>
+
+    <div class="creative-card">
+      <div class="c-label">Vídeo · 04</div>
+      <div class="c-title">Criativo Psicológico / Economia</div>
+      <div class="c-desc">Persona "tentando economizar" descobre que comprar mais sai mais barato. Humor + insight.</div>
+      <ul class="hook-list">
+        <li>"Eu tentando economizar…"</li>
+        <li>Sweet: compro 3 por R$29,90 cada</li>
+        <li>Call to action de urgência</li>
+      </ul>
+    </div>
+
+    <div class="creative-card">
+      <div class="c-label">Ideia Extra · 05</div>
+      <div class="c-title">"Desafio 3 por menos"</div>
+      <div class="c-desc">Alto potencial de escala. Mostrar preço normal vs preço com promoção de forma visual e impactante.</div>
+      <ul class="hook-list">
+        <li>Preço normal: R$120 (3 brincos)</li>
+        <li>Com promoção: R$89,70</li>
+        <li>"3 por menos de R$90 — não é promoção, é oportunidade"</li>
+      </ul>
+    </div>
+
+    <div class="creative-card">
+      <div class="c-label">Hooks prontos · 06</div>
+      <div class="c-title">Aberturas de Vídeo</div>
+      <div class="c-desc">Use no início dos Reels/vídeos para prender a atenção nos primeiros 3 segundos.</div>
+      <ul class="hook-list">
+        <li>"Descobri como pagar menos em brincos"</li>
+        <li>"Se você ama acessórios, olha isso"</li>
+        <li>"Eu só queria um brinco… aí eu vi isso"</li>
+        <li>"Você ainda tá comprando só 1?"</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="sec-title" style="margin-top:1rem">
+    <h2>Referências de Anúncios</h2>
+    <span>Facebook Ads Library</span>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-label">Referência 01 · Oportunidade</div>
+      <div class="card-value" style="font-size:1rem">Copy: "1 pouco, 2 é bom, 3 é maravilhoso"</div>
+      <div class="card-sub">Criativos baseados em oportunidade — percepção de valor progressivo</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Referência 02 · Valor Real</div>
+      <div class="card-value" style="font-size:1rem">Percepção real de valor</div>
+      <div class="card-sub">Anúncio de percepção de valor — apresentar o desconto como ganho concreto</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Referência 03 · Presente</div>
+      <div class="card-value" style="font-size:1rem">Presentes até X valor</div>
+      <div class="card-sub">Formato de presente/brinde atrelado à compra — Reels do Instagram</div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SEÇÃO 4 — COPIES & ROTEIROS
+══════════════════════════════════════════ -->
+<section id="copys" class="section">
+<div class="content fade-in">
+
+  <div class="sec-title">
+    <h2>Copies & Roteiros</h2>
+    <span>Textos prontos para usar</span>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-type">Versão 1 · Narração (Voz Over)</div>
+    <div class="copy-title">Tom: Sofisticado / Aspiracional</div>
+    <div class="copy-text">Quanto mais você leva, mais você economiza.
+Aqui é assim: na compra de 2 peças, você já ganha 10% de desconto. Com 3 peças, são 15% off. E se você levar 4 ou mais… prepare-se para 20% de desconto em tudo.
+
+Semi joias e acessórios que valorizam cada look — do dia a dia ao momento especial.
+Aproveite. O desconto cresce junto com o seu estilo.</div>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-type">Versão 1 · Copy Stories / Legenda curta</div>
+    <div class="copy-title">Formato direto para Stories</div>
+    <div class="copy-text">Desconto que cresce com você!
+2 peças → 10% OFF
+3 peças → 15% OFF
+4+ peças → 20% OFF
+
+Semi joias e acessórios incríveis esperando por você.
+Quanto mais, melhor. Aproveite agora!</div>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-type">Versão 1 · Copy Feed / Reels com contexto</div>
+    <div class="copy-title">Legenda longa para feed</div>
+    <div class="copy-text">Desconto progressivo chegou e você vai amar!
+
+Na nossa coleção de semi joias e acessórios, o desconto aumenta conforme você escolhe mais peças:
+2 peças = 10% de desconto
+3 peças = 15% de desconto
+4 ou mais = 20% de desconto
+
+Brincos, colares, pulseiras, anéis… tudo com aquele acabamento que todo mundo pergunta onde comprou.
+
+Monta o seu kit, presenteia quem você ama ou renova o seu estilo — e ainda economiza!
+Corre antes que esgote. Link na bio!
+
+#SemiJoias #Acessórios #DescontoProgressivo #Moda #PromoçãoEspecial</div>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-type">Versão 2 · Narração (Voz Over)</div>
+    <div class="copy-title">Tom: Relatable / UGC / Humor</div>
+    <div class="copy-text">Eu só queria um brinco…
+Aí eu vi isso aqui e precisei recalcular 😅
+
+1 sai por R$39,90…
+Mas se levar 2, já cai pra R$34,90 cada
+E se levar 3… só R$29,90 cada 🤯
+
+Tipo assim… eu levo mais, pago menos e ainda tenho opção pra vários looks?
+Não tem como escolher só um 😂
+
+Eu já garanti os meus… corre antes que acabe</div>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-type">Versão 2 · Copy Legenda do Anúncio</div>
+    <div class="copy-title">Copy principal para tráfego pago</div>
+    <div class="copy-text">Você ainda tá comprando só 1? 😅
+
+Na Sweet é assim:
+1 brinco → R$39,90
+2 brincos → R$34,90 cada
+3 brincos → R$29,90 cada
+
+Ou seja… quanto mais você leva, menos você paga 💥
+
+Aproveita pra montar seu mix e variar nos looks sem gastar mais por isso.
+
+Promoção por tempo limitado ⏳
+Clique e escolha os seus 👇</div>
+  </div>
+
+</div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SEÇÃO 5 — E-MAILS
+══════════════════════════════════════════ -->
+<section id="emails" class="section">
+<div class="content fade-in">
+
+  <div class="sec-title">
+    <h2>E-mail Marketing</h2>
+    <span>Fluxo completo · Flow Biz</span>
+  </div>
+
+  <div class="email-card">
+    <div class="email-header">
+      <span class="phase-tag">Antecipação</span>
+      <span class="subject">Assunto: Psiu… algo diferente vem aí 👀</span>
+    </div>
+    <div class="email-body">
+      <div class="email-pre">Pré-header: Você foi uma das primeiras a saber. Fica de olho.</div>
+      <div class="email-content">Oi, [nome]! 💖
+
+Você achou que o mês do consumidor tinha acabado?
+
+A gente também pensou nisso… e resolveu fazer diferente.
+
+Nos próximos dias, a Sweet vai liberar uma oferta que a gente nunca tinha feito antes — e você, por estar aqui, vai ser uma das primeiras a saber.
+
+Não vamos entregar tudo agora (onde estaria a graça, né? 😏), mas dá uma dica: quanto mais você se presentear, mais vai economizar.
+
+Fica ligada no seu e-mail. Na quarta, a gente conta tudo.
+
+Com carinho,
+Sweet Acessórios 🌸</div>
+      <a href="#" class="cta-btn" onclick="return false">👉 Entrar no grupo VIP</a>
+    </div>
+  </div>
+
+  <div class="email-card">
+    <div class="email-header">
+      <span class="phase-tag">Lançamento</span>
+      <span class="subject">Assunto: Chegou! Quanto mais você leva, menos você paga</span>
+    </div>
+    <div class="email-body">
+      <div class="email-pre">Pré-header: O desconto progressivo de brincos que você não vai querer perder.</div>
+      <div class="email-content">Prometemos e aqui está: o mês do consumidor NÃO acabou na Sweet.
+
+A gente criou algo especial para quem ama acessórios — e sabe que escolher só um brinco é impossível 😂
+
+✨ Leve 2 brincos → R$15 OFF
+✨ Leve 3 brincos → R$20 OFF
+✨ Leve 4 brincos → R$25 OFF
+✨ Leve 6 brincos → R$50 OFF
+
+Brincos a partir de R$39,90. Quanto mais você monta o seu mix, menos paga por cada peça — e ainda sai com looks pra semana toda.
+
+E tem mais: toda compra concorre ao sorteio de um broche ou lenço 🎁
+
+A oferta vai até 06/04, mas os mais pedidos esgotam antes. Não deixa pra depois!
+
+Com carinho,
+Sweet Acessórios 🌸</div>
+      <a href="#" class="cta-btn" onclick="return false">👉 Quero montar meu mix de brincos</a>
+      <div class="tip-box">💡 <strong>Dica de produção:</strong> incluir bloco visual com 3–4 brincos em destaque logo abaixo do CTA. Produtos com foto + preço aumentam o clique direto.</div>
+    </div>
+  </div>
+
+  <div class="email-card">
+    <div class="email-header">
+      <span class="phase-tag">Últimos Dias</span>
+      <span class="subject">Assunto: Últimas horas com 25% OFF nos brincos ⏳</span>
+    </div>
+    <div class="email-body">
+      <div class="email-pre">Pré-header: A oferta encerra domingo. Não deixa seu mix pela metade.</div>
+      <div class="email-content">Oi, [nome]! 💖
+
+Dois dias. É o que falta para a nossa oferta de brincos encerrar.
+
+Se você ainda não aproveitou, essa é a última chance de pegar os seus com desconto progressivo:
+
+✨ Leve 2 brincos → R$15 OFF
+✨ Leve 3 brincos → R$20 OFF
+✨ Leve 4 brincos → R$25 OFF
+✨ Leve 6 brincos → R$50 OFF
+
+Muitas clientes já garantiram os delas — e alguns modelos estão quase esgotando.
+
+Não vai ser aquela que ficou de fora, né? 😉
+
+A oferta vai até 06/04. Depois disso, os preços voltam ao normal.
+
+Com carinho,
+Sweet Acessórios 🌸
+
+P.S.: Lembra que toda compra concorre ao sorteio de um broche ou lenço 🎁 Não perca essa também!</div>
+      <a href="#" class="cta-btn" onclick="return false">👉 Quero montar meu mix de brincos</a>
+      <div class="tip-box">💡 <strong>Dica de produção:</strong> incluir bloco visual com 3–4 brincos em destaque logo abaixo do CTA. Produtos com foto + preço aumentam o clique direto.</div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SEÇÃO 6 — GRUPO WHATSAPP
+══════════════════════════════════════════ -->
+<section id="grupos" class="section">
+<div class="content fade-in">
+
+  <div class="sec-title">
+    <h2>Grupo WhatsApp</h2>
+    <span>Cronograma de mensagens VIP</span>
+  </div>
+
+  <div class="msg-card">
+    <div class="msg-num">01</div>
+    <div class="msg-phase">Antecipação — Mistério</div>
+    <div class="msg-text">Meninas… vocês acharam que o mês do consumidor tinha acabado?
+
+A Sweet resolveu fazer algo diferente… e quem estiver aqui vai ter acesso primeiro 👀
+
+🚨 Aviso importante:
+Se você gosta de desconto e brinco… melhor ficar de olho aqui nas próximas mensagens 👀
+
+[Liberar spoiler das joias que vai ter + marcar o dia para revelar]</div>
+  </div>
+
+  <div class="msg-card">
+    <div class="msg-num">02</div>
+    <div class="msg-phase">Lançamento — Revelação da Oferta</div>
+    <div class="msg-text">🚨 ALERTA VIP! Quem está aqui no grupo tem acesso antecipado… e sim, os descontos continuam ativos!
+
+Quanto mais brincos você leva, MENOS você paga 😱
+
+Na compra de 2 brincos → R$15 OFF
+Na compra de 3 brincos → R$20 OFF
+Na compra de 4 brincos → R$25 OFF
+Na compra de 6 brincos → R$50 OFF
+
+Já garantiu os seus hoje?
+👇 Corre antes que acabe 👇
+[LINK DA CATEGORIA]</div>
+  </div>
+
+  <div class="msg-card">
+    <div class="msg-num">03</div>
+    <div class="msg-phase">Ativação — Urgência de estoque</div>
+    <div class="msg-text">⏳ Não deixa pra depois…
+
+Os modelos com valor a partir de R$39,90 estão acabando rápido!
+
+E lembra: quanto mais você pega, maior o desconto 💥
+
+Na compra de 2 brincos → R$15 OFF
+Na compra de 3 brincos → R$20 OFF
+Na compra de 4 brincos → R$25 OFF
+Na compra de 6 brincos → R$50 OFF
+
+👇 Corre antes que acabe 👇
+[LINK DA CATEGORIA]</div>
+  </div>
+
+  <div class="msg-card">
+    <div class="msg-num">04</div>
+    <div class="msg-phase">Ativação — Sorteio + Frete</div>
+    <div class="msg-text">🎁 Tem presente rolando aqui no grupo!
+
+Comprando hoje você ainda participa do sorteio de um broche 💖
+Ou seja… além do desconto, ainda pode ganhar mais!
+
+🚚 Frete grátis + desconto = combinação perfeita
+Compras acima de R$349,90 já garantem frete grátis 😍
+
+Agora junta isso com desconto progressivo… é hoje!
+
+👇 Clique agora mesmo e garanta já! 👇
+[LINK DA CATEGORIA]</div>
+  </div>
+
+  <div class="msg-card">
+    <div class="msg-num">05</div>
+    <div class="msg-phase">Ativação — Produto esgotado (gatilho de escassez)</div>
+    <div class="msg-text">*VOCÊ PERDEU!* 😱
+
+O modelo do conjunto colar + brincos coração cravejado acabou!
+
+As ofertas da semana do consumidor na Sweet ainda continuam sendo um sucesso!! Com descontos nunca vistos antes para você cliente VIP!
+
+Mas não fique triste! Ainda tem outros modelos esperando por você!
+
+Em instantes vamos liberar mais ofertas para você! 👀
+
+[LINK DA CATEGORIA]</div>
+  </div>
+
+</div>
+</section>
+
+<script>
+  function show(id) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    document.getElementById(id).classList.remove('fade-in');
+    void document.getElementById(id).offsetWidth;
+    document.getElementById(id).classList.add('fade-in');
+    const btns = document.querySelectorAll('.nav-btn');
+    const map = ['visao','cronograma','criativos','copys','emails','grupos'];
+    btns[map.indexOf(id)].classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
+
