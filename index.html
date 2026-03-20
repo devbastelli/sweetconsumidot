@@ -39,75 +39,75 @@
   .nav-btn.active { color: #F86F3D; border-bottom-color: #F86F3D; }
   .section { display: none; }
   .section.active { display: block; }
-  .content { max-width: 1100px; margin: 0 auto; padding: 3rem 2.5rem; }
-  .sec-title { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 2.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+  .content { max-width: 1100px; margin: 0 auto; padding: 4.5rem 3rem; }
+  .sec-title { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 3rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
   .sec-title h2 { font-family: 'Poppins', sans-serif; font-size: 2rem; font-weight: 400; color: var(--dark); }
   .sec-title span { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rose); }
-  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem; margin-bottom: 2rem; }
-  .card { background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: 1.5rem; transition: box-shadow 0.2s, transform 0.2s; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.75rem; margin-bottom: 3rem; }
+  .card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 2rem; transition: box-shadow 0.2s, transform 0.2s; }
   .card:hover { box-shadow: 0 8px 30px rgba(42,31,31,0.08); transform: translateY(-2px); }
-  .card-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
-  .card-value { font-family: 'Poppins', sans-serif; font-size: 1.45rem; font-weight: 400; color: var(--dark); line-height: 1.3; }
-  .card-sub { font-size: 0.78rem; color: var(--muted); margin-top: 0.4rem; }
-  .offer-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
-  .offer-card { background: linear-gradient(135deg, #FEF0EB, #D6EAF4); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem 1.25rem; text-align: center; position: relative; overflow: hidden; }
+  .card-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.65rem; }
+  .card-value { font-family: 'Poppins', sans-serif; font-size: 1.45rem; font-weight: 400; color: var(--dark); line-height: 1.4; }
+  .card-sub { font-size: 0.78rem; color: var(--muted); margin-top: 0.5rem; }
+  .offer-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+  .offer-card { background: linear-gradient(135deg, #FEF0EB, #D6EAF4); border: 1px solid var(--border); border-radius: 12px; padding: 2rem 1.5rem; text-align: center; position: relative; overflow: hidden; }
   .offer-card::before { content: ''; position: absolute; top: -20px; right: -20px; width: 70px; height: 70px; background: radial-gradient(circle, rgba(248,111,61,0.15), transparent); border-radius: 50%; }
   .offer-qty { font-family: 'Poppins', sans-serif; font-size: 3rem; font-weight: 300; color: var(--rose); line-height: 1; }
-  .offer-label { font-size: 0.72rem; color: var(--mid); margin: 0.25rem 0 0.75rem; }
-  .offer-disc { background: var(--rose); color: white; font-size: 1.1rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 4px; display: inline-block; }
-  .offer-note { font-size: 0.7rem; color: var(--muted); margin-top: 0.5rem; }
-  .channel-list { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 2rem; }
-  .channel-tag { background: var(--white); border: 1px solid var(--border); border-radius: 100px; padding: 0.45rem 1.1rem; font-size: 0.78rem; font-weight: 500; color: var(--mid); display: flex; align-items: center; gap: 0.5rem; }
+  .offer-label { font-size: 0.72rem; color: var(--mid); margin: 0.35rem 0 1rem; }
+  .offer-disc { background: var(--rose); color: white; font-size: 1.1rem; font-weight: 600; padding: 0.5rem 1rem; border-radius: 4px; display: inline-block; }
+  .offer-note { font-size: 0.7rem; color: var(--muted); margin-top: 0.65rem; }
+  .channel-list { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 3rem; }
+  .channel-tag { background: var(--white); border: 1px solid var(--border); border-radius: 100px; padding: 0.6rem 1.4rem; font-size: 0.78rem; font-weight: 500; color: var(--mid); display: flex; align-items: center; gap: 0.5rem; }
   .channel-tag .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--rose); flex-shrink: 0; }
   .timeline { position: relative; }
   .timeline::before { content: ''; position: absolute; left: 100px; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, transparent, var(--border) 5%, var(--border) 95%, transparent); }
-  .tl-item { display: grid; grid-template-columns: 100px 1fr; gap: 2rem; margin-bottom: 2.5rem; position: relative; }
+  .tl-item { display: grid; grid-template-columns: 100px 1fr; gap: 2.5rem; margin-bottom: 3.5rem; position: relative; }
   .tl-date { text-align: right; padding-top: 0.15rem; }
   .tl-date .day { font-family: 'Poppins', sans-serif; font-size: 1.6rem; font-weight: 300; color: var(--rose); line-height: 1; }
   .tl-date .month { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
   .tl-dot { position: absolute; left: 96px; top: 6px; width: 9px; height: 9px; background: var(--rose); border-radius: 50%; border: 2px solid var(--cream); }
-  .tl-body { padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+  .tl-body { padding-bottom: 3rem; border-bottom: 1px solid var(--border); }
   .tl-item:last-child .tl-body { border-bottom: none; }
-  .tl-phase { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
-  .tl-title { font-family: 'Poppins', sans-serif; font-size: 1.35rem; font-weight: 400; color: var(--dark); margin-bottom: 0.75rem; }
-  .tl-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
-  .tl-action { background: #EAF3F9; border: 1px solid rgba(20,120,166,0.2); border-radius: 4px; padding: 0.3rem 0.75rem; font-size: 0.73rem; color: var(--mid); font-weight: 500; }
-  .tl-note { font-size: 0.8rem; color: var(--muted); margin-top: 0.6rem; font-style: italic; line-height: 1.5; }
-  .copy-block { background: var(--white); border: 1px solid var(--border); border-left: 3px solid var(--rose); border-radius: 0 6px 6px 0; padding: 1.5rem; margin-bottom: 1.25rem; }
-  .copy-block .copy-type { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
-  .copy-block .copy-title { font-family: 'Poppins', sans-serif; font-size: 1.2rem; font-weight: 600; color: var(--dark); margin-bottom: 0.75rem; }
-  .copy-block .copy-text { font-size: 0.82rem; line-height: 1.7; color: var(--mid); white-space: pre-line; }
-  .email-card { background: var(--white); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 1.5rem; }
-  .email-header { background: var(--dark); padding: 1rem 1.5rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  .tl-phase { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+  .tl-title { font-family: 'Poppins', sans-serif; font-size: 1.35rem; font-weight: 400; color: var(--dark); margin-bottom: 1rem; }
+  .tl-actions { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: 1rem; }
+  .tl-action { background: #EAF3F9; border: 1px solid rgba(20,120,166,0.2); border-radius: 4px; padding: 0.4rem 0.9rem; font-size: 0.73rem; color: var(--mid); font-weight: 500; }
+  .tl-note { font-size: 0.8rem; color: var(--muted); margin-top: 0.85rem; font-style: italic; line-height: 1.6; }
+  .copy-block { background: var(--white); border: 1px solid var(--border); border-left: 3px solid var(--rose); border-radius: 0 10px 10px 0; padding: 2rem; margin-bottom: 1.75rem; }
+  .copy-block .copy-type { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.65rem; }
+  .copy-block .copy-title { font-family: 'Poppins', sans-serif; font-size: 1.2rem; font-weight: 600; color: var(--dark); margin-bottom: 1rem; }
+  .copy-block .copy-text { font-size: 0.84rem; line-height: 1.85; color: var(--mid); white-space: pre-line; }
+  .email-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 2.5rem; }
+  .email-header { background: var(--dark); padding: 1.25rem 2rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
   .email-header .phase-tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #F86F3D; background: rgba(248,111,61,0.12); border: 1px solid rgba(248,111,61,0.3); padding: 0.25rem 0.7rem; border-radius: 3px; }
   .email-header .subject { font-size: 0.88rem; color: var(--white); font-weight: 400; }
-  .email-body { padding: 1.5rem; }
-  .email-pre { font-size: 0.72rem; color: var(--muted); font-style: italic; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
-  .email-content { font-size: 0.82rem; line-height: 1.75; color: var(--mid); white-space: pre-line; }
-  .cta-btn { display: inline-block; background: var(--rose); color: white; font-size: 0.78rem; font-weight: 600; padding: 0.65rem 1.5rem; border-radius: 4px; text-decoration: none; margin-top: 1rem; letter-spacing: 0.04em; }
-  .tip-box { background: #D6EAF4; border: 1px solid rgba(20,120,166,0.2); border-radius: 6px; padding: 0.85rem 1.1rem; font-size: 0.76rem; color: var(--mid); margin-top: 1rem; }
+  .email-body { padding: 2rem; }
+  .email-pre { font-size: 0.72rem; color: var(--muted); font-style: italic; margin-bottom: 1.25rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+  .email-content { font-size: 0.84rem; line-height: 1.85; color: var(--mid); white-space: pre-line; }
+  .cta-btn { display: inline-block; background: var(--rose); color: white; font-size: 0.78rem; font-weight: 600; padding: 0.75rem 1.75rem; border-radius: 6px; text-decoration: none; margin-top: 1.25rem; letter-spacing: 0.04em; }
+  .tip-box { background: #D6EAF4; border: 1px solid rgba(20,120,166,0.2); border-radius: 8px; padding: 1rem 1.25rem; font-size: 0.76rem; color: var(--mid); margin-top: 1.25rem; }
   .tip-box strong { color: var(--dark); }
-  .msg-card { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.25rem; position: relative; }
-  .msg-num { position: absolute; top: 1.25rem; right: 1.25rem; font-family: 'Poppins', sans-serif; font-size: 1.8rem; font-weight: 300; color: #FBBDA6; line-height: 1; }
-  .msg-phase { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
-  .msg-text { font-size: 0.82rem; line-height: 1.7; color: var(--mid); white-space: pre-line; padding-right: 2rem; }
-  .creative-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.25rem; margin-bottom: 2rem; }
-  .creative-card { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; transition: box-shadow 0.2s; }
+  .msg-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 2rem; margin-bottom: 1.75rem; position: relative; }
+  .msg-num { position: absolute; top: 1.5rem; right: 1.5rem; font-family: 'Poppins', sans-serif; font-size: 1.8rem; font-weight: 300; color: #FBBDA6; line-height: 1; }
+  .msg-phase { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.65rem; }
+  .msg-text { font-size: 0.84rem; line-height: 1.85; color: var(--mid); white-space: pre-line; padding-right: 2.5rem; }
+  .creative-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.75rem; margin-bottom: 3rem; }
+  .creative-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 2rem; transition: box-shadow 0.2s; }
   .creative-card:hover { box-shadow: 0 8px 30px rgba(42,31,31,0.07); }
-  .creative-card .c-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rose); margin-bottom: 0.5rem; }
-  .creative-card .c-title { font-family: 'Poppins', sans-serif; font-size: 1.2rem; font-weight: 600; color: var(--dark); margin-bottom: 0.75rem; }
-  .creative-card .c-desc { font-size: 0.8rem; line-height: 1.6; color: var(--mid); margin-bottom: 0.75rem; }
+  .creative-card .c-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rose); margin-bottom: 0.65rem; }
+  .creative-card .c-title { font-family: 'Poppins', sans-serif; font-size: 1.2rem; font-weight: 600; color: var(--dark); margin-bottom: 1rem; }
+  .creative-card .c-desc { font-size: 0.82rem; line-height: 1.7; color: var(--mid); margin-bottom: 1rem; }
   .hook-list { list-style: none; }
-  .hook-list li { font-size: 0.8rem; color: var(--mid); padding: 0.4rem 0; border-bottom: 1px solid var(--border); display: flex; gap: 0.6rem; }
+  .hook-list li { font-size: 0.8rem; color: var(--mid); padding: 0.5rem 0; border-bottom: 1px solid var(--border); display: flex; gap: 0.6rem; }
   .hook-list li:last-child { border-bottom: none; }
   .hook-list li::before { content: '›'; color: var(--rose); font-weight: bold; }
-  .meta-bar { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 2rem; }
-  .meta-box { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 1.75rem; text-align: center; }
+  .meta-bar { display: grid; grid-template-columns: 1fr 1fr; gap: 1.75rem; margin-bottom: 3rem; }
+  .meta-box { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 2.5rem; text-align: center; }
   .meta-box .meta-num { font-family: 'Poppins', sans-serif; font-size: 3.5rem; font-weight: 300; color: var(--rose); line-height: 1; }
-  .meta-box .meta-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-top: 0.4rem; }
-  .meta-box .meta-detail { font-size: 0.78rem; color: var(--mid); margin-top: 0.3rem; }
-  .trigger-list { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 2rem; }
-  .trigger-tag { background: #FEF0EB; border: 1px solid rgba(248,111,61,0.25); border-radius: 6px; padding: 0.6rem 1.1rem; font-size: 0.8rem; font-weight: 500; color: #F86F3D; }
+  .meta-box .meta-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-top: 0.6rem; }
+  .meta-box .meta-detail { font-size: 0.78rem; color: var(--mid); margin-top: 0.4rem; }
+  .trigger-list { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 3rem; }
+  .trigger-tag { background: #FEF0EB; border: 1px solid rgba(248,111,61,0.25); border-radius: 8px; padding: 0.75rem 1.25rem; font-size: 0.8rem; font-weight: 500; color: #F86F3D; }
   @media (max-width: 700px) {
     .header-inner { grid-template-columns: 1fr; }
     .header-meta { text-align: left; }
@@ -115,7 +115,7 @@
     .tl-item { grid-template-columns: 70px 1fr; gap: 1.25rem; }
     .tl-dot { left: 66px; }
     .meta-bar { grid-template-columns: 1fr; }
-    .content { padding: 2rem 1.25rem; }
+    .content { padding: 2.5rem 1.5rem; }
   }
   .ref-link { display: inline-block; margin-top: 0.75rem; font-size: 0.75rem; font-weight: 600; color: #1478A6; text-decoration: none; letter-spacing: 0.04em; border-bottom: 1px solid rgba(20,120,166,0.3); padding-bottom: 1px; transition: color 0.2s, border-color 0.2s; }
   .ref-link:hover { color: var(--dark); border-color: var(--dark); }
@@ -147,6 +147,7 @@
     <button class="nav-btn" onclick="show('copys')">Copies & Roteiros</button>
     <button class="nav-btn" onclick="show('emails')">E-mails</button>
     <button class="nav-btn" onclick="show('grupos')">Grupo WhatsApp</button>
+    <button class="nav-btn" onclick="show('roteiros')">Roteiros de Narração</button>
   </div>
 </nav>
 
@@ -442,8 +443,10 @@ Clique e escolha os seus 👇</div>
 <section id="emails" class="section">
 <div class="content fade-in">
   <div class="sec-title"><h2>E-mail Marketing</h2><span>Fluxo completo · Flow Biz</span></div>
+
+  <!-- ANTECIPAÇÃO 1 -->
   <div class="email-card">
-    <div class="email-header"><span class="phase-tag">Antecipação</span><span class="subject">Assunto: Psiu… algo diferente vem aí 👀</span></div>
+    <div class="email-header"><span class="phase-tag">Antecipação 1</span><span class="subject">Assunto: Psiu… algo diferente vem aí 👀</span></div>
     <div class="email-body">
       <div class="email-pre">Pré-header: Você foi uma das primeiras a saber. Fica de olho.</div>
       <div class="email-content">Oi, [nome]! 💖
@@ -463,8 +466,31 @@ Sweet Acessórios 🌸</div>
       <a href="#" class="cta-btn" onclick="return false">👉 Entrar no grupo VIP</a>
     </div>
   </div>
+
+  <!-- ANTECIPAÇÃO 2 -->
   <div class="email-card">
-    <div class="email-header"><span class="phase-tag">Lançamento</span><span class="subject">Assunto: Chegou! Quanto mais você leva, menos você paga</span></div>
+    <div class="email-header"><span class="phase-tag">Antecipação 2</span><span class="subject">Assunto: Convocação de urgência!</span></div>
+    <div class="email-body">
+      <div class="email-pre">Pré-header: Você foi uma das primeiras a saber. Fica de olho.</div>
+      <div class="email-content">Oi, [nome]! 💖
+
+Amanhã é o dia. E a gente quase não resiste em contar tudo agora…
+
+Mas vamos deixar só um spoiler: a Sweet separou uma seleção especial de brincos pra essa ação. São peças que combinam com tudo — do look do dia a dia ao look de evento.
+
+Sabe aquele brinco que você viu, adorou e ficou "vou deixar pra depois"?
+
+Então o Depois é amanhã 😉
+
+Com carinho,
+Sweet Acessórios 🌸</div>
+      <a href="#" class="cta-btn" onclick="return false">👉 Entrar no grupo VIP</a>
+    </div>
+  </div>
+
+  <!-- LANÇAMENTO 1 -->
+  <div class="email-card">
+    <div class="email-header"><span class="phase-tag">Lançamento 1</span><span class="subject">Assunto: Chegou! Quanto mais você leva, menos você paga</span></div>
     <div class="email-body">
       <div class="email-pre">Pré-header: O desconto progressivo de brincos que você não vai querer perder.</div>
       <div class="email-content">Prometemos e aqui está: o mês do consumidor NÃO acabou na Sweet.
@@ -488,6 +514,71 @@ Sweet Acessórios 🌸</div>
       <div class="tip-box">💡 <strong>Dica de produção:</strong> incluir bloco visual com 3–4 brincos em destaque logo abaixo do CTA. Produtos com foto + preço aumentam o clique direto.</div>
     </div>
   </div>
+
+  <!-- LANÇAMENTO 2 -->
+  <div class="email-card">
+    <div class="email-header"><span class="phase-tag">Lançamento 2</span><span class="subject">Assunto: Começa amanhã. Já separei os meus 👀</span></div>
+    <div class="email-body">
+      <div class="email-pre">Pré-header: Quem viu primeiro, escolheu melhor.</div>
+      <div class="email-content">Oi, [nome]! 💖
+
+Amanhã de manhã a oferta entra no ar e se você conhece a Sweet, sabe que os favoritos esgotam rápido.
+
+Por isso a gente decidiu te avisar hoje: já vai montando a sua lista de desejos. Amanhã é só confirmar e aproveitar.
+
+A dica: pensa em quais brincos você já quis levar mas ficou na dúvida. Porque amanhã, levar 2 ou 3 de uma vez vai sair muito mais em conta do que você imagina 😉
+
+Até amanhã,
+Sweet Acessórios 🌸</div>
+    </div>
+  </div>
+
+  <!-- LANÇAMENTO MADRUGADA -->
+  <div class="email-card">
+    <div class="email-header"><span class="phase-tag">Lançamento · Madrugada</span><span class="subject">Assunto: Só quem tá acordada agora vai ver isso primeiro</span></div>
+    <div class="email-body">
+      <div class="email-pre">Pré-header: Shh… a oferta já está no ar.</div>
+      <div class="email-content">Oi, [nome] 🌙
+
+Enquanto todo mundo dorme… a Sweet liberou a oferta.
+
+Se você tá acordada agora, acabou de ganhar vantagem. A coleção ainda está completinha e você escolhe com calma — sem concorrer com ninguém.
+
+✨ 2 brincos → 15% OFF
+✨ 3 brincos → 20% OFF
+✨ 4 brincos → 25% OFF
+
+Madrugada tem esse charme: você, os seus brincos favoritos e ninguém disputando os melhores modelos 😉
+
+Aproveita,
+Sweet Acessórios 🌸</div>
+    </div>
+  </div>
+
+  <!-- MEIO DA AÇÃO -->
+  <div class="email-card">
+    <div class="email-header"><span class="phase-tag">Meio da Ação</span><span class="subject">Assunto: Tudo bem por aí? 😄</span></div>
+    <div class="email-body">
+      <div class="email-content">Oi, [nome]! 💖
+
+A gente reparou que você ainda não aproveitou o desconto progressivo… e veio checar se tá tudo bem por aí 😄
+
+Brincadeiras à parte: a oferta ainda está no ar, mas o estoque dos brincos mais pedidos está caindo rápido.
+
+Se você ainda está em dúvida de quais levar, vai uma dica: escolhe 3. O desconto chega em 20% e você sai com opções pra combinar com tudo.
+
+✨ 2 brincos → 15% OFF
+✨ 3 brincos → 20% OFF
+✨ 4 brincos → 25% OFF
+
+A oferta encerra dia 06/04. Não deixa passar!
+
+Com carinho,
+Sweet Acessórios 🌸</div>
+    </div>
+  </div>
+
+  <!-- ÚLTIMOS DIAS -->
   <div class="email-card">
     <div class="email-header"><span class="phase-tag">Últimos Dias</span><span class="subject">Assunto: Últimas horas com 25% OFF nos brincos ⏳</span></div>
     <div class="email-body">
@@ -517,44 +608,106 @@ P.S.: Lembra que toda compra concorre ao sorteio de um broche ou lenço 🎁 Nã
       <div class="tip-box">💡 <strong>Dica de produção:</strong> incluir bloco visual com 3–4 brincos em destaque logo abaixo do CTA. Produtos com foto + preço aumentam o clique direto.</div>
     </div>
   </div>
+
 </div>
 </section>
 
 <section id="grupos" class="section">
 <div class="content fade-in">
-  <div class="sec-title"><h2>Grupo WhatsApp</h2><span>Cronograma de mensagens VIP</span></div>
+  <div class="sec-title"><h2>Grupo WhatsApp</h2><span>Cronograma dia a dia · 23/03 – 29/03</span></div>
+
+  <!-- SEGUNDA 23/03 -->
   <div class="msg-card">
-    <div class="msg-num">01</div>
-    <div class="msg-phase">Antecipação — Mistério</div>
+    <div class="msg-num">Seg</div>
+    <div class="msg-phase">Segunda-feira 23/03 · Msg 01 · Antecipação</div>
     <div class="msg-text">Meninas… vocês acharam que o mês do consumidor tinha acabado?
 
 A Sweet resolveu fazer algo diferente… e quem estiver aqui vai ter acesso primeiro 👀
 
-🚨 Aviso importante:
-Se você gosta de desconto e brinco… melhor ficar de olho aqui nas próximas mensagens 👀
-
-[Liberar spoiler das joias que vai ter + marcar o dia para revelar]</div>
+[Liberar spoiler das joias que vai ter + marcar o dia para revelar a oferta]</div>
   </div>
-  <div class="msg-card">
-    <div class="msg-num">02</div>
-    <div class="msg-phase">Lançamento — Revelação da Oferta</div>
-    <div class="msg-text">🚨 ALERTA VIP! Quem está aqui no grupo tem acesso antecipado… e sim, os descontos continuam ativos!
 
-Quanto mais brincos você leva, MENOS você paga 😱
+  <!-- TERÇA 24/03 -->
+  <div class="msg-card">
+    <div class="msg-num">Ter</div>
+    <div class="msg-phase">Terça-feira 24/03 · Msg 01</div>
+    <div class="msg-text">🚨 Aviso importante:
+
+Se você gosta de desconto e brinco… melhor ficar de olho aqui nas próximas mensagens 👀</div>
+  </div>
+
+  <div class="msg-card">
+    <div class="msg-num">Ter</div>
+    <div class="msg-phase">Terça-feira 24/03 · Msg 02 · Revelação VIP</div>
+    <div class="msg-text">🚨 REVELADO PARA VIPS 🚨
+
+Meninas… agora sim vocês vão entender por que pedimos pra esperar 👀
+
+As ofertas da Semana do Consumidor na Sweet NÃO acabaram… e pra quem tá aqui no grupo, elas voltaram ainda melhores 😱
+
+Funciona assim: quanto mais brincos você leva, MENOR fica o valor final.
 
 Na compra de 2 brincos → R$15 OFF
 Na compra de 3 brincos → R$20 OFF
 Na compra de 4 brincos → R$25 OFF
-Na compra de 6 brincos → R$50 OFF
+Na compra de 6 brincos → R$50 OFF</div>
+  </div>
 
-Já garantiu os seus hoje?
+  <div class="msg-card">
+    <div class="msg-num">Ter</div>
+    <div class="msg-phase">Terça-feira 24/03 · Msg 03 · Detalhes da oferta</div>
+    <div class="msg-text">Ou seja… é a oportunidade perfeita pra montar seus mixes e levar vários pagando muito menos 💎
+
+E tem mais:
+Brincos a partir de R$39,90
+★ Frete grátis nas compras acima de R$349,90
+
+Mas atenção: Essa condição é limitada e alguns modelos já estão com poucas unidades.
+
+👉 Quinta-feira vamos liberar o link exclusivo aqui no grupo.
+Não compre hoje. Espera porque vai valer MUITO mais a pena.</div>
+  </div>
+
+  <!-- QUARTA 25/03 -->
+  <div class="msg-card">
+    <div class="msg-num">Qua</div>
+    <div class="msg-phase">Quarta-feira 25/03 · Msg 01 · Aquecimento final</div>
+    <div class="msg-text">Tá tudo certo para o nosso combinado de amanhã?
+
+Amanhã de manhã a oferta entra no ar e se você conhece a Sweet, sabe que os favoritos esgotam rápido.
+
+Por isso a gente decidiu te avisar hoje: já vai montando a sua lista de desejos. Amanhã é só confirmar e aproveitar.
+
+Dica: pensa em quais brincos você já quis levar mas ficou na dúvida. Porque amanhã, levar 2 ou 3 de uma vez vai sair muito mais em conta do que você imagina 😉
+
+Até amanhã
+Link para já montar o seu carrinho: [LINK]</div>
+  </div>
+
+  <!-- QUINTA 26/03 -->
+  <div class="msg-card">
+    <div class="msg-num">Qui</div>
+    <div class="msg-phase">Quinta-feira 26/03 · Msg 01 · 🚀 LANÇAMENTO</div>
+    <div class="msg-text">🚨 LIBERADOOOO! Quem está aqui no grupo tem acesso antecipado… e sim, os descontos continuam ativos!
+
+Quanto mais brincos você leva, MENOS você paga 😱
+
+Na compra de 2 brincos você ganha R$15 OFF
+Na compra de 3 brincos você ganha R$20 OFF
+Na compra de 4 brincos você ganha R$25 OFF
+Na compra de 6 brincos você ganha R$50 OFF
+
 👇 Corre antes que acabe 👇
 [LINK DA CATEGORIA]</div>
   </div>
+
+  <!-- SEXTA 27/03 -->
   <div class="msg-card">
-    <div class="msg-num">03</div>
-    <div class="msg-phase">Ativação — Urgência de estoque</div>
-    <div class="msg-text">⏳ Não deixa pra depois…
+    <div class="msg-num">Sex</div>
+    <div class="msg-phase">Sexta-feira 27/03 · Msg 01 · Urgência de estoque</div>
+    <div class="msg-text">[Envie fotos das joias para gerar desejo]
+
+⏳ Não deixa pra depois…
 
 Os modelos com valor a partir de R$39,90 estão acabando rápido!
 
@@ -565,18 +718,31 @@ Na compra de 3 brincos → R$20 OFF
 Na compra de 4 brincos → R$25 OFF
 Na compra de 6 brincos → R$50 OFF
 
+Já garantiu os seus hoje?
 👇 Corre antes que acabe 👇
 [LINK DA CATEGORIA]</div>
   </div>
+
+  <!-- SÁBADO 28/03 -->
   <div class="msg-card">
-    <div class="msg-num">04</div>
-    <div class="msg-phase">Ativação — Sorteio + Frete</div>
+    <div class="msg-num">Sáb</div>
+    <div class="msg-phase">Sábado 28/03 · Msg 01 · Sorteio</div>
     <div class="msg-text">🎁 Tem presente rolando aqui no grupo!
 
 Comprando hoje você ainda participa do sorteio de um broche 💖
+
 Ou seja… além do desconto, ainda pode ganhar mais!
 
-🚚 Frete grátis + desconto = combinação perfeita
+👇 Clique agora mesmo e garanta já! 👇
+[LINK DA CATEGORIA]</div>
+  </div>
+
+  <!-- DOMINGO 29/03 -->
+  <div class="msg-card">
+    <div class="msg-num">Dom</div>
+    <div class="msg-phase">Domingo 29/03 · Msg 01 · Frete grátis</div>
+    <div class="msg-text">Você ganhou! Frete grátis + desconto = combinação perfeita 🚚
+
 Compras acima de R$349,90 já garantem frete grátis 😍
 
 Agora junta isso com desconto progressivo… é hoje!
@@ -584,21 +750,118 @@ Agora junta isso com desconto progressivo… é hoje!
 👇 Clique agora mesmo e garanta já! 👇
 [LINK DA CATEGORIA]</div>
   </div>
-  <div class="msg-card">
-    <div class="msg-num">05</div>
-    <div class="msg-phase">Ativação — Produto esgotado (gatilho de escassez)</div>
-    <div class="msg-text">*VOCÊ PERDEU!* 😱
 
-O modelo do conjunto colar + brincos coração cravejado acabou!
+  <div class="msg-card">
+    <div class="msg-num">Dom</div>
+    <div class="msg-phase">Domingo 29/03 · Ideia de imagem · Escassez</div>
+    <div class="msg-text">*VOCÊ PERDEU!* 😱 Modelo esgotado!
 
 As ofertas da semana do consumidor na Sweet ainda continuam sendo um sucesso!! Com descontos nunca vistos antes para você cliente VIP!
 
+E o nosso modelo do conjunto colar + brincos coração cravejado acabou!
+
 Mas não fique triste! Ainda tem outros modelos esperando por você!
 
-Em instantes vamos liberar mais ofertas para você! 👀
-
+👇 Clique agora mesmo e garanta já! 👇
 [LINK DA CATEGORIA]</div>
   </div>
+
+</div>
+</section>
+
+<!-- ROTEIROS DE NARRAÇÃO -->
+<section id="roteiros" class="section">
+<div class="content fade-in">
+  <div class="sec-title"><h2>Roteiros de Narração</h2><span>5 roteiros prontos para vídeos e reels</span></div>
+
+  <div class="copy-block">
+    <div class="copy-type">Roteiro 01 · Urgência</div>
+    <div class="copy-title">"PARA TUDO."</div>
+    <div class="copy-text">PARA TUDO.
+
+Se você ama brinco e ama desconto… você precisa ver isso.
+
+A Sweet liberou uma condição especial. Quanto mais você compra, maior é o seu desconto.
+
+Leve 2, 3, 4 ou até 6 brincos e pague muito menos por isso. Tem brincos a partir de R$39,90 e ainda frete grátis nas compras acima de R$349,90.
+
+É a chance perfeita pra montar vários looks de uma vez só pagando barato.
+
+Mas corre. Os modelos são limitados e estão acabando rápido.
+
+Clica agora e garante os seus antes que acabe!</div>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-type">Roteiro 02 · Confirmação</div>
+    <div class="copy-title">"SIM, É VERDADE."</div>
+    <div class="copy-text">SIM, É VERDADE. As ofertas da Semana do Consumidor na Sweet ainda continuam… e estão ainda melhores.
+
+A Sweet liberou uma condição especial. Quanto mais você compra, maior é o seu desconto.
+
+Leve 2, 3, 4 ou até 6 brincos e pague muito menos por isso. Tem brincos a partir de R$39,90 e ainda frete grátis nas compras acima de R$349,90.
+
+É a chance perfeita pra montar vários looks de uma vez só pagando barato.
+
+Mas corre. Os modelos são limitados e estão acabando rápido.
+
+Clica agora e garante os seus antes que acabe!</div>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-type">Roteiro 03 · Mix de brincos</div>
+    <div class="copy-title">"Se você ama combinar mix de brincos…"</div>
+    <div class="copy-text">Se você ama combinar mix de brincos… você precisa ver isso.
+
+A Sweet liberou uma condição especial pra Semana do Consumidor que ainda continua — e agora melhor do que antes.
+
+Quanto mais brincos você escolhe, maior é o desconto.
+
+Leve 2, 3, 4 ou até 6 brincos e pague muito menos por isso. Tem brincos a partir de R$39,90 e ainda frete grátis nas compras acima de R$349,90.
+
+Perfeito pra montar vários mixes e variar todos os dias.
+
+Mas corre. Os modelos são limitados e estão acabando rápido.
+
+Clica agora e garante os seus antes que acabe!</div>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-type">Roteiro 04 · Variedade diária</div>
+    <div class="copy-title">"Se você ama variar seus brincos todos os dias…"</div>
+    <div class="copy-text">Se você ama variar seus brincos todos os dias… olha isso.
+
+As ofertas da Semana do Consumidor na Sweet continuam — e melhoraram.
+
+Quanto mais brincos você escolhe, maior é o desconto no final.
+
+Dá pra montar vários looks diferentes pagando muito menos. Tem brincos a partir de R$39,90 e frete grátis nas compras acima de R$349,90.
+
+É a oportunidade perfeita pra renovar tudo de uma vez.
+
+Mas corre. Os modelos são limitados e estão acabando rápido.</div>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-type">Roteiro 05 · Quanto dá pra levar</div>
+    <div class="copy-title">"Tudo que dá pra comprar até R$150"</div>
+    <div class="copy-text">Vem ver tudo que dá pra levar na Sweet com R$150,00 nessa ação.
+
+Aqui, quanto mais brincos você escolhe, maior é o desconto.
+
+Então você não precisa escolher só um.
+
+Dá pra montar vários mixes, variar no dia a dia e ainda pagar muito menos no final.
+
+Tem brincos a partir de R$39,90 e o desconto vai aumentando conforme você adiciona mais.
+
+Ou seja… com o mesmo valor, você leva muito mais.
+
+Mas corre, porque os modelos são limitados e estão acabando rápido.
+
+Clica agora e aproveita.</div>
+  </div>
+
 </div>
 </section>
 
@@ -611,7 +874,7 @@ Em instantes vamos liberar mais ofertas para você! 👀
     void document.getElementById(id).offsetWidth;
     document.getElementById(id).classList.add('fade-in');
     const btns = document.querySelectorAll('.nav-btn');
-    const map = ['visao','cronograma','criativos','copys','emails','grupos'];
+    const map = ['visao','cronograma','criativos','copys','emails','grupos','roteiros'];
     btns[map.indexOf(id)].classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
